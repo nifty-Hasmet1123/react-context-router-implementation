@@ -1,6 +1,8 @@
 import axios from "axios";
 import { useEffect } from "react";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import Button from "../components/button";
 
 function TraditionalFetching() {
   const url = "https://jsonplaceholder.typicode.com/users/1";
@@ -9,6 +11,7 @@ function TraditionalFetching() {
     data: null,
   });
   const { isLoading, data } = state;
+  const navigate = useNavigate();
 
   useEffect(() => {
     axios
@@ -27,22 +30,23 @@ function TraditionalFetching() {
 
   return (
     <>
-      <h2>Json Placeholder Page</h2>
-      {
+      <section className="traditional__section p-2">
+        <h2 className="traditional__jsonplaceholder">Json Placeholder Page</h2>
         <div>
-          <h3>{data.name}</h3>
-          <h3>{data.username}</h3>
-          <h3>{data.email}</h3>
-          <br />
-          <h3>
-            <ExtractObject object={data.address} />
+          <h3 className="pl-3">{ data.name }</h3>
+          <h3 className="pl-3">{ data.username }</h3>
+          <h3 className="pl-3">{ data.email }</h3>
+          <br role="separator"/>
+          <h3 className="pl-3">
+            <ExtractObject object={ data.address } />
           </h3>
-          <br />
-          <h3>
-            <ExtractObject object={data.company} />
+          <br role="separator"/>
+          <h3 className="pl-3">
+            <ExtractObject object={ data.company } />
           </h3>
         </div>
-      }
+        <Button />
+      </section>
     </>
   );
 }

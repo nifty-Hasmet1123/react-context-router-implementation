@@ -1,0 +1,29 @@
+@mixin keyValueCons(
+  $prefix,
+  $key,
+  $value,
+  $property
+) {
+  @if ($key == "default")
+  {
+    .#{$prefix} {
+      #{$property}: $value;
+    }
+  }
+
+  @else
+  {
+    .#{$prefix}-#{$key} {
+      #{$property}: $value;
+    }
+  }
+}
+
+@each $property, $map in $utilities {
+  $prefix: map-get($map, "prefix");
+  $value: map-get($map, "values");
+
+  @each $k, $v in $value {
+    @include keyValueCons($prefix, $k, $v, $property);
+  }
+}

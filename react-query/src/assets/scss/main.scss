@@ -1,5 +1,17 @@
+// variables
+@import "./variables/variables.scss";
+
+// utilites
+@import "./utils/utils.scss";
+
+// mixins
+@import "./mixins/mixins.scss";
+@import "./mixins/extensions.scss";
+
 // base
 @import "./base/base.scss";
 
 // layout
 @import "./layout/header.scss";
+@import "./layout/traditional-layout.scss";
+@import "./layout/reactquery-layout.scss";

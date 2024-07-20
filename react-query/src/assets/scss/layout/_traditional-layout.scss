@@ -1,0 +1,21 @@
+.traditional__jsonplaceholder::after {
+  content: ":";
+}
+
+.traditional__section {
+  @extend %centered-box;
+  border-radius: 1px 75px;
+}
+
+.ctn__button {
+  display: flex;
+  justify-content: center;
+  margin-top: 12px;
+}
+
+.ctn__button > button {
+  padding: $base-padding;
+  font-size: $base-gap-size-xl;
+  font-weight: 700;
+  cursor: pointer;
+}

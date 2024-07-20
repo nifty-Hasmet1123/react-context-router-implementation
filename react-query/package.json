@@ -1,9 +1,17 @@
 {
   "name": "react-query",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.1",
   "type": "module",
   "author": "Maximo Ignacio",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "maintainers": [
+    "Maximo Ignacio"
+  ],
+  "license": "ISC",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
