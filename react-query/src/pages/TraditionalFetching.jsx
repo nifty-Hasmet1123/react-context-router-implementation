@@ -1,7 +1,6 @@
 import axios from "axios";
 import { useEffect } from "react";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
 import Button from "../components/button";
 
 function TraditionalFetching() {
@@ -11,7 +10,6 @@ function TraditionalFetching() {
     data: null,
   });
   const { isLoading, data } = state;
-  const navigate = useNavigate();
 
   useEffect(() => {
     axios
